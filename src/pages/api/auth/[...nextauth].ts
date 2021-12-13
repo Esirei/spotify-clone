@@ -22,7 +22,7 @@ export default NextAuth({
           accessToken: account.access_token,
           refreshToken: account.refresh_token,
           username: account.providerAccountId,
-          accessTokenExpiresAt: account.expires_at * 1000, // expires_at is date in milliseconds when token expires
+          accessTokenExpiresAt: account.expires_at * 1000, // expires_at is date in seconds when token expires
         };
       }
 
@@ -56,7 +56,7 @@ const refreshToken = async (token: SpotifyJWT): Promise<SpotifyJWT> => {
     return {
       ...token,
       accessToken: body.access_token,
-      accessTokenExpiresAt: body.expires_in * 1000 + Date.now(), // expires_in is milliseconds till token expires
+      accessTokenExpiresAt: body.expires_in * 1000 + Date.now(), // expires_in is seconds till token expires
       refreshToken: body.refresh_token ?? token.refreshToken,
     };
   } catch (e) {
