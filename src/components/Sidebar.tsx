@@ -6,9 +6,26 @@ import {
   RssIcon,
   SearchIcon,
 } from '@heroicons/react/outline';
-import { FC } from 'react';
+import { useSession } from 'next-auth/react';
+import { FC, useEffect, useState } from 'react';
+import useSpotify from '~/hooks/useSpotify';
+import PlaylistObjectSimplified = SpotifyApi.PlaylistObjectSimplified;
 
 const Sidebar: FC = () => {
+  const { data: session } = useSession();
+  const spotify = useSpotify();
+  const [playlists, setPlaylists] = useState<PlaylistObjectSimplified[]>([]);
+
+  useEffect(() => {
+    if (spotify.getAccessToken()) {
+      void spotify.getUserPlaylists().then(playlists => {
+        setPlaylists(playlists.body.items);
+      });
+    }
+  }, [session, spotify]);
+
+  console.log(playlists);
+
   return (
     <div className="text-gray-500 p-5 text-sm border-r border-gray-900 h-screen overflow-auto scrollbar-hide">
       <div className="space-y-4">
@@ -42,9 +59,9 @@ const Sidebar: FC = () => {
 
         <hr className="border-gray-900" />
 
-        {Array.from(Array(20)).map((_, i) => (
-          <p key={i} className="cursor-pointer hover:text-white">
-            Playlist name...
+        {playlists.map(playlist => (
+          <p key={playlist.id} className="cursor-pointer hover:text-white">
+            {playlist.name}
           </p>
         ))}
       </div>
