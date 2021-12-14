@@ -39,6 +39,14 @@ export default NextAuth({
       console.log('token expired, refreshing...');
       return await refreshToken(token);
     },
+    // data available to client side
+    session: ({ session, token, user }) => {
+      console.log('session callback', session, token, user);
+      session.user.accessToken = token.accessToken;
+      session.user.refreshToken = token.refreshToken;
+      session.user.username = token.username;
+      return session;
+    },
   },
 });
 
