@@ -4,6 +4,9 @@ import Spotify from 'next-auth/providers/spotify';
 import spotifyApi, { LOGIN_URL } from '~/libs/spotify';
 
 export default NextAuth({
+  pages: {
+    signIn: '/login',
+  },
   providers: [
     Spotify({
       clientId: process.env.SPOTIFY_CLIENT_ID,
