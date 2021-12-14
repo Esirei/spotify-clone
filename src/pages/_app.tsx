@@ -1,6 +1,7 @@
 import { SessionProvider, SessionProviderProps } from 'next-auth/react';
 import { AppProps } from 'next/app';
 import { FC } from 'react';
+import { RecoilRoot } from 'recoil';
 import '~/styles/globals.css';
 
 interface Props extends AppProps {
@@ -9,9 +10,11 @@ interface Props extends AppProps {
 
 const MyApp: FC<Props> = ({ Component, pageProps }) => {
   return (
-    <SessionProvider session={pageProps.session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <RecoilRoot>
+      <SessionProvider session={pageProps.session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </RecoilRoot>
   );
 };
 
