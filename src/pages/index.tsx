@@ -1,17 +1,19 @@
 import Head from 'next/head';
 import React from 'react';
+import Center from '~/components/Center';
 import Sidebar from '~/components/Sidebar';
 
 export default function Home(): React.ReactElement {
   return (
-    <div className="">
+    <div className="bg-black h-screen overflow-hidden">
       <Head>
         <title>Spotify</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="flex">
         <Sidebar />
+        <Center />
       </main>
       <div></div>
     </div>
