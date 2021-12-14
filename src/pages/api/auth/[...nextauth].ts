@@ -34,6 +34,7 @@ export default NextAuth({
       // token has not expired
       if (Date.now() < token.accessTokenExpiresAt) {
         console.log('token not expired');
+        delete token.error;
         return token;
       }
 
@@ -60,6 +61,7 @@ const refreshToken = async (token: JWT): Promise<JWT> => {
     const { body } = await spotifyApi.refreshAccessToken();
 
     console.log('token refreshed', body);
+    delete token.error;
     return {
       ...token,
       accessToken: body.access_token,
