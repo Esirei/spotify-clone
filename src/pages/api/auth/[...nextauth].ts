@@ -37,19 +37,12 @@ export default NextAuth({
 
       // refresh token
       console.log('token expired, refreshing...');
-      return await refreshToken(token as SpotifyJWT);
+      return await refreshToken(token);
     },
   },
 });
 
-interface SpotifyJWT extends JWT {
-  accessToken: string;
-  refreshToken: string;
-  username: string;
-  accessTokenExpiresAt: number;
-}
-
-const refreshToken = async (token: SpotifyJWT): Promise<SpotifyJWT> => {
+const refreshToken = async (token: JWT): Promise<JWT> => {
   try {
     spotifyApi.setAccessToken(token.accessToken);
     spotifyApi.setRefreshToken(token.refreshToken);
