@@ -29,6 +29,8 @@ export default NextAuth({
         };
       }
 
+      // token here will be the earlier mapped token that was returned on initial sign in.
+
       // token has not expired
       if (Date.now() < token.accessTokenExpiresAt) {
         console.log('token not expired');
@@ -45,6 +47,7 @@ export default NextAuth({
       session.user.accessToken = token.accessToken;
       session.user.refreshToken = token.refreshToken;
       session.user.username = token.username;
+      session.error = token.error;
       return session;
     },
   },
