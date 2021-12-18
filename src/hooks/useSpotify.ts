@@ -12,7 +12,7 @@ const useSpotify = (): typeof spotifyApi => {
         void signIn();
       }
 
-      spotifyApi.setAccessToken(session.user.accessToken);
+      spotifyApi.setAccessToken(session.user?.accessToken ?? '');
     }
   }, [session]);
 

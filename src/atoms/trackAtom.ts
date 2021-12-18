@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export const currentTrackIdState = atom({
+export const currentTrackIdState = atom<string | undefined>({
   key: 'currentTrackId',
   default: undefined,
 });

@@ -6,7 +6,7 @@ export const currentPlaylistIdState = atom({
   default: '',
 });
 
-export const currentPlaylistState = atom<SinglePlaylistResponse>({
+export const currentPlaylistState = atom<SinglePlaylistResponse | undefined>({
   key: 'currentPlaylist',
   default: undefined,
 });
