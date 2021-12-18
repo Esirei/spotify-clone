@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import TimeAgo from 'timeago-react';
+import { millisToMinutesAndSeconds } from '~/libs/time';
 import PlaylistTrackObject = SpotifyApi.PlaylistTrackObject;
 
 interface Props {
@@ -31,7 +32,7 @@ const Song: FC<Props> = ({ item: { track, added_at }, order }) => {
       </div>
 
       <div className="flex justify-end items-center">
-        <p>{track.duration_ms}</p>
+        <p>{millisToMinutesAndSeconds(track.duration_ms)}</p>
       </div>
     </div>
   );
