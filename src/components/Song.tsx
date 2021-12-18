@@ -14,7 +14,9 @@ interface Props {
 
 const Song: FC<Props> = ({ item: { track, added_at }, order }) => {
   const spotify = useSpotify();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentTrackId, setCurrentTrackId] = useRecoilState(currentTrackIdState);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
 
   const playTrack = async () => {
