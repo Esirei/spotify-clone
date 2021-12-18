@@ -5,6 +5,7 @@ import { FC, useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { currentPlaylistIdState, currentPlaylistState } from '~/atoms/playlistAtom';
 import useSpotify from '~/hooks/useSpotify';
+import Songs from './Songs';
 
 const Center: FC = () => {
   const spotify = useSpotify();
@@ -40,7 +41,19 @@ const Center: FC = () => {
 
       <section
         className={`flex items-end space-x-7 bg-gradient-to-b ${color} to-black h-80 text-white p-8`}>
-        <h1>Hello</h1>
+        <img
+          src={playlist?.images?.[0]?.url}
+          alt={playlist?.name}
+          className="w-44 h-44 shadow-2xl"
+        />
+        <div>
+          <p>PLAYLIST</p>
+          <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold">{playlist?.name}</h1>
+        </div>
+      </section>
+
+      <section>
+        <Songs />
       </section>
     </div>
   );
