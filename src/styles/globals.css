@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .player-button {
+        @apply w-5 h-5 cursor-pointer hover:scale-110 duration-100 hover:text-white ease-in-out;
+    }
+}

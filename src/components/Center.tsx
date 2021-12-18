@@ -10,14 +10,14 @@ import Songs from './Songs';
 const Center: FC = () => {
   const spotify = useSpotify();
   const { data: session } = useSession();
-  const [color, setColor] = useState<string>(null);
+  const [color, setColor] = useState<string>(colors[0]);
   const playlistId = useRecoilValue(currentPlaylistIdState);
   const [playlist, setPlaylist] = useRecoilState(currentPlaylistState);
 
   console.log(playlist);
 
   useEffect(() => {
-    setColor(shuffle(colors).pop());
+    setColor(shuffle(colors)[0]);
   }, [playlistId]);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Center: FC = () => {
         <button
           onClick={() => signOut()}
           className="flex items-center p-1 pr-2 space-x-3 bg-black rounded-full opacity-90 duration-200 hover:opacity-80">
-          <img className="w-10 h-10 rounded-full" src={session?.user?.image} alt="user profile" />
+          <img className="w-10 h-10 rounded-full" src={session?.user.image} alt="user profile" />
           <h2>{session?.user?.name}</h2>
           <ChevronDownIcon className="w-5 h-5" />
         </button>

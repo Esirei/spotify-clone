@@ -30,7 +30,7 @@ const Sidebar: FC = () => {
   console.log(playlists);
 
   return (
-    <div className="hidden overflow-auto p-5 h-screen text-xs text-gray-500 border-r border-gray-900 sm:text-sm sm:max-w-[12rem] md:block lg:max-w-[15rem] scrollbar-hide">
+    <div className="hidden overflow-auto p-5 pb-36 h-screen text-xs text-gray-500 border-r border-gray-900 sm:text-sm sm:max-w-[12rem] md:block lg:max-w-[15rem] scrollbar-hide">
       <div className="space-y-4">
         <button className="flex items-center space-x-2 hover:text-white">
           <HomeIcon className="w-5 h-5" />
