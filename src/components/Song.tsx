@@ -17,7 +17,7 @@ const Song: FC<Props> = ({ item: { track, added_at }, order }) => {
       <div className="flex col-span-3 items-center space-x-4">
         <p>{order + 1}</p>
         <img className="w-10 h-10" src={image} alt={track.album.name} />
-        <div>
+        <div className="truncate">
           <p className="text-white truncate">{track.name}</p>
           <p className="truncate">{track.artists.map(artist => artist.name).join(', ')}</p>
         </div>
