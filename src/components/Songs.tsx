@@ -6,9 +6,9 @@ import Song from '~/components/Song';
 const Songs: FC = () => {
   const playlist = useRecoilValue(currentPlaylistState);
   return (
-    <div className="px-8 flex flex-col space-y-1 pb-28">
-      {playlist?.tracks.items.map(({ track }, i) => (
-        <Song key={track.id} track={track} order={i} />
+    <div className="px-8 flex flex-col space-y-1 pb-28 text-white/70">
+      {playlist?.tracks.items.map((item, i) => (
+        <Song key={item.track.id} item={item} order={i} />
       ))}
     </div>
   );
