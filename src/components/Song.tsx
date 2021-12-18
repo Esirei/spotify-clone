@@ -35,8 +35,8 @@ const Song: FC<Props> = ({ item: { track, added_at }, order }) => {
           onClick={playTrack}
           className="w-6 h-6"
           title={`Play ${track.name} by ${track.artists.map(artist => artist.name).join(', ')}`}>
-          <p className="text-right group-hover:hidden">{order + 1}</p>
-          <PlayIcon className="hidden text-white group-hover:block" />
+          <p className="w-6 h-6 text-right group-hover:hidden">{order + 1}</p>
+          <PlayIcon className="hidden w-6 h-6 text-white group-hover:block" />
         </button>
         <img className="w-10 h-10" src={image} alt={track.album.name} />
         <div className="truncate">
