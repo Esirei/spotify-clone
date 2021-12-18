@@ -30,8 +30,8 @@ const Center: FC = () => {
   }, [playlistId, setPlaylist, spotify]);
 
   return (
-    <div className="grow">
-      <header className="absolute top-4 right-8 text-white">
+    <div className="grow text-white h-screen overflow-y-auto">
+      <header className="absolute top-4 right-8">
         <div className="flex items-center p-1 pr-2 space-x-3 bg-black rounded-full opacity-90 duration-200 hover:opacity-80">
           <img className="w-10 h-10 rounded-full" src={session?.user?.image} alt="user profile" />
           <h2>{session?.user?.name}</h2>
@@ -39,8 +39,7 @@ const Center: FC = () => {
         </div>
       </header>
 
-      <section
-        className={`flex items-end space-x-7 bg-gradient-to-b ${color} to-black h-80 text-white p-8`}>
+      <section className={`flex items-end space-x-7 bg-gradient-to-b ${color} to-black h-80 p-8`}>
         <img
           src={playlist?.images?.[0]?.url}
           alt={playlist?.name}
