@@ -6,7 +6,7 @@ import Song from '~/components/Song';
 const Songs: FC = () => {
   const playlist = useRecoilValue(currentPlaylistState);
   return (
-    <div className="px-4 flex flex-col pb-28 text-white/70">
+    <div className="flex flex-col px-4 pb-28 text-white/70">
       {playlist?.tracks.items.map((item, i) => (
         <Song key={item.track.id} item={item} order={i} />
       ))}

@@ -30,26 +30,26 @@ const Center: FC = () => {
   }, [playlistId, setPlaylist, spotify]);
 
   return (
-    <div className="grow text-white h-screen overflow-y-auto scrollbar-hide">
+    <div className="h-screen grow overflow-y-auto text-white scrollbar-hide">
       <header className="absolute top-4 right-8">
         <button
           onClick={() => signOut()}
-          className="flex items-center p-1 pr-2 space-x-3 bg-black rounded-full opacity-90 duration-200 hover:opacity-80">
-          <img className="w-10 h-10 rounded-full" src={session?.user.image} alt="user profile" />
+          className="flex items-center space-x-3 rounded-full bg-black p-1 pr-2 opacity-90 duration-200 hover:opacity-80">
+          <img className="h-10 w-10 rounded-full" src={session?.user.image} alt="user profile" />
           <h2>{session?.user?.name}</h2>
-          <ChevronDownIcon className="w-5 h-5" />
+          <ChevronDownIcon className="h-5 w-5" />
         </button>
       </header>
 
-      <section className={`flex items-end space-x-7 bg-gradient-to-b ${color} to-black h-80 p-8`}>
+      <section className={`flex items-end space-x-7 bg-gradient-to-b ${color} h-80 to-black p-8`}>
         <img
           src={playlist?.images?.[0]?.url}
           alt={playlist?.name}
-          className="w-44 h-44 shadow-2xl"
+          className="h-44 w-44 shadow-2xl"
         />
         <div>
           <p>PLAYLIST</p>
-          <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold">{playlist?.name}</h1>
+          <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">{playlist?.name}</h1>
         </div>
       </section>
 

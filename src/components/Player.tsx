@@ -69,25 +69,25 @@ const Player: FC = () => {
   console.log('trackInfo', trackInfo, art);
 
   return (
-    <div className="grid grid-cols-3 px-2 h-24 text-xs text-white bg-gradient-to-b from-black to-gray-900 md:text-base md:px-4">
+    <div className="grid h-24 grid-cols-3 bg-gradient-to-b from-black to-gray-900 px-2 text-xs text-white md:px-4 md:text-base">
       <div className="flex items-center space-x-4">
-        <img className="hidden w-16 h-16 md:inline" src={art} alt={trackInfo?.album.name} />
+        <img className="hidden h-16 w-16 md:inline" src={art} alt={trackInfo?.album.name} />
         <div className="truncate">
           <h3 className="truncate">{trackInfo?.name}</h3>
-          <p className="text-xs truncate text-white/70">
+          <p className="truncate text-xs text-white/70">
             {trackInfo?.artists.map(artist => artist.name).join(', ')}
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col justify-evenly items-center text-white/70">
+      <div className="flex flex-col items-center justify-evenly text-white/70">
         <div className="flex items-center space-x-4">
           <SwitchHorizontalIcon className="player-button" />
           <RewindIcon className="player-button" />
           {isPlaying ? (
-            <PauseIcon onClick={handlePlayPause} className="w-10 h-10 text-white player-button" />
+            <PauseIcon onClick={handlePlayPause} className="player-button h-10 w-10 text-white" />
           ) : (
-            <PlayIcon onClick={handlePlayPause} className="w-10 h-10 text-white player-button" />
+            <PlayIcon onClick={handlePlayPause} className="player-button h-10 w-10 text-white" />
           )}
           <FastForwardIcon className="player-button" />
           <ReplyIcon className="player-button" />

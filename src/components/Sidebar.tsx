@@ -30,33 +30,33 @@ const Sidebar: FC = () => {
   console.log(playlists);
 
   return (
-    <div className="hidden overflow-auto p-5 pb-36 h-screen text-xs text-gray-500 border-r border-gray-900 sm:text-sm sm:max-w-[12rem] md:block lg:max-w-[15rem] scrollbar-hide">
+    <div className="hidden h-screen overflow-auto border-r border-gray-900 p-5 pb-36 text-xs text-gray-500 scrollbar-hide sm:max-w-[12rem] sm:text-sm md:block lg:max-w-[15rem]">
       <div className="space-y-4">
         <button className="flex items-center space-x-2 hover:text-white">
-          <HomeIcon className="w-5 h-5" />
+          <HomeIcon className="h-5 w-5" />
           <span>Home</span>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <SearchIcon className="w-5 h-5" />
+          <SearchIcon className="h-5 w-5" />
           <span>Search</span>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <LibraryIcon className="w-5 h-5" />
+          <LibraryIcon className="h-5 w-5" />
           <span>Your Library</span>
         </button>
 
         <hr className="border-gray-900" />
 
         <button className="flex items-center space-x-2 hover:text-white">
-          <PlusCircleIcon className="w-5 h-5" />
+          <PlusCircleIcon className="h-5 w-5" />
           <span>Create Playlist</span>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <HeartIcon className="w-5 h-5" />
+          <HeartIcon className="h-5 w-5" />
           <span>Liked Songs</span>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <RssIcon className="w-5 h-5" />
+          <RssIcon className="h-5 w-5" />
           <span>Your Episodes</span>
         </button>
 

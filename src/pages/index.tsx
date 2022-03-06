@@ -6,7 +6,7 @@ import Sidebar from '~/components/Sidebar';
 
 export default function Home(): React.ReactElement {
   return (
-    <div className="bg-black h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden bg-black">
       <Head>
         <title>Spotify</title>
         <link rel="icon" href="/favicon.ico" />

@@ -8,13 +8,13 @@ type Props = {
 
 const Login: FC<Props> = ({ providers }) => {
   return (
-    <div className="flex flex-col items-center h-screen bg-black justify-center">
-      <img src="/images/spotify-logo.png" alt="" className="w-52 h-52" />
+    <div className="flex h-screen flex-col items-center justify-center bg-black">
+      <img src="/images/spotify-logo.png" alt="" className="h-52 w-52" />
 
       {Object.values(providers).map(provider => (
         <div key={provider.id} className="mt-5">
           <button
-            className="bg-[#20D760] text-white p-5 rounded-full"
+            className="rounded-full bg-[#20D760] p-5 text-white"
             onClick={() => signIn(provider.id, { callbackUrl: '/' })}>
             Login with {provider.name}
           </button>
